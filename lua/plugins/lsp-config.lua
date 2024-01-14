@@ -10,7 +10,12 @@ return {
       config = function()
          require('mason-lspconfig').setup({
             ensure_installed = {
-               'lua_ls'
+               'lua_ls',
+               "bashls",
+               "biome",
+               "marksman",
+               "typos_lsp",
+               "vimls",
             },
          })
       end
@@ -22,7 +27,22 @@ return {
          local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
          lspconfig.lua_ls.setup({
-            capabilitiies = capabilities
+            capabilities = capabilities
+         })
+         lspconfig.bashls.setup({
+            capabilities = capabilities
+         })
+         lspconfig.biome.setup({
+            capabilities = capabilities
+         })
+         lspconfig.marksman.setup({
+            capabilities = capabilities
+         })
+         lspconfig.typos_lsp.setup({
+            capabilities = capabilities
+         })
+         lspconfig.vimls.setup({
+            capabilities = capabilities
          })
 
          vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
