@@ -1,7 +1,8 @@
 return {
-   "catppuccin/nvim",
+   'catppuccin/nvim', priority=1000,
    config = function()
-      require ("catppuccin").setup({
+      require('catppuccin').setup({
+         flavour = 'mocha',
          integrations = {
             cmp = true,
             gitsigns = true,
@@ -10,6 +11,6 @@ return {
             mason = false,
          },
       })
-      vim.cmd.colorscheme "catppuccin"
+      vim.cmd.colorscheme 'catppuccin'
    end
 }
